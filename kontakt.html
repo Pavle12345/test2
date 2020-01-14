@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="LTR" lang="sr-RS">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GSE Kontakt</title>
+ <meta name="Description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+<link href="css/site_general.css" rel="stylesheet" type="text/css" media="all" />
+<script src="javascript/jquery.2.2.4.min.js"></script>
+<script src="javascript/site_general.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="site-menu">
+<div class="wrap">
+<div class="menu-main-flex align-items-center">
+<div class="menu-logo"><a href="pocetna.html"><img src="images/gse-logo.png" alt="GSE" class="img-responsive menu-logo-img"></a></div>
+<div class="menu-b">
+<ul class="menu-items-flex align-items-center">
+  <li><a href="pocetna.html">Pocetna</a></li>
+  <li><a href="agenda.html">Agenda</a></li>
+  <li><a href="prijava.html">Prijava</a></li>
+  <li><a href="galerija.html">Galerija</a></li>
+  <li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+<div class="mobile-menu"><a href="pocetna.html" class="menu-head"><img src="images/menu-icon.png" alt="menu icon" class="img-responsive mobile-menu-img"></a></div>
+</div>
+</div>
+<div class="mobile-menu-container">
+<ul class="mobile-menu-items">
+<li><a href="pocetna.html">Pocetna</a></li>
+  <li><a href="agenda.html">Agenda</a></li>
+  <li><a href="prijava.html">Prijava</a></li>
+  <li><a href="galerija.html">Galerija</a></li>
+  <li><a href="kontakt.html">Kontakt</a></li>
+</ul></div>
+</div>
+</div>
+</header>
+<div class="page-container">
+<div class="wrap">
+<div class="page-content">
+  <h1>Kontaktirajte nas</h1>
+  <div class="site-form-frame">
+    <form name="contact" action="potvrda_kontakt.html" method="post" id="contact"><input type="hidden" name="action" value="process">
+       <div class="f-box">  
+       <div class="form-group">
+            <div class="col-6 col-adj-left">
+                <input type="text" name="firstname" maxlength="64" required aria-required="true" id="inputFirstName" placeholder="Ime" class="f-item"> 
+            </div>
+            <div class="col-6 col-adj-right">
+                <input type="text" name="lastname" maxlength="64" required aria-required="true" id="inputLastName" placeholder="Prezime" class="f-item">
+             </div>
+             <div class="clearfix"></div>  
+        </div>
+         <div class="form-group">     
+          <input type="email" name="email_address" maxlength="128" required aria-required="true" id="inputEmail" placeholder="Email" class="f-item"> 
+          </div>
+        <div class="form-group">
+            <div><input type="text" name="topic" maxlength="128" required aria-required="true" id="inputTopic" placeholder="Tema" class="f-item"></div>
+        </div>   
+        <div class="form-group">
+             <textarea name="comments" wrap="" required aria-required="true" id="inputComment" placeholder="Poruka..." rows="30" class="f-item f-height"></textarea>
+        </div>      
+       </div>
+        <div class="f-box">
+       <div class="button-container">
+           <button class="button-blue"  id="checkoutButton"  type="submit">Posalji</button>
+        </div>
+        </form>
+        <div class="link-container">
+               <a href="javascript:resetRForm('contact')">RESETUJ</a>
+        </div>
+   </div>
+ </div>
+ </div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="footer-logo"><img src="images/gse-footer-m.png" alt="GSE" class="img-responsive"></div>
+<div class="copyright">COPYRIGHT 2019-2020. Made by MMP</div>
+</footer>
+<script>				
+	$('.menu-head').click(function(e){
+		e.preventDefault();
+		$('.mobile-menu-container').slideToggle();
+	});
+	$(window).resize(function(){  
+	    if($('header').width() > 812){ 
+		  $('.mobile-menu-container').hide();
+		}
+	});
+</script>
+<script>
+$(document).ready(function() {
+  $('#contact').submit(function(e) {
+       e.preventDefault();
+       
+	   var error = contactValidation();
+       if(!error){
+		window.location = 'potvrda_kontakt.html';
+      }
+ });
+ });
+</script> 
+</body>
+</html>

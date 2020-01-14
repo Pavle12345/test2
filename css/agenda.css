@@ -1,0 +1,63 @@
+box-frame {
+	position:relative;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+}
+.subinfo-tab{position:relative;display:block;width:100%;margin-bottom:1px;padding:1%; }
+.subinfo-head{position:relative;display:block;width:100%;margin-bottom:1px;padding:1em;font-size:1.1em;color:#000;font-weight:600;background:deepskyblue !important;}
+a.subinfo-head:link{color:#000;text-decoration:none;}
+a.subinfo-head:hover{color:#000;}
+a.subinfo-head:visited{color:#000;}
+.subinfo-head::before, .subinfo-head::after {
+    /* arrow icon on the right */
+	 content: '';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    height: 2px;
+    width: 13px;
+    background:#000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+	 -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+  .subinfo-head::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    right: 32px;
+  }
+  .subinfo-head::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+   .subinfo-cont-visible .subinfo-head::before {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .subinfo-cont-visible .subinfo-head::after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+.subinfo-cont{display:none;position:relative;width:100%;padding:20px;font-size:1.0em;color:#000;background:#fefefe;}
+.subinfo-cont span {margin-right:20px;}
